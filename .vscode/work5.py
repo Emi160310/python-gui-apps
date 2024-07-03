@@ -22,12 +22,18 @@ sushi = [
     "雲丹",
 ]
 num = len(sushi)
+
 label0 = tk.Label(window, text="", bg=bg_color, fg=fg_color)
 label0.pack(pady=10)
 
+label0.config(text=sushi[random.randrange(num)])
 
-def button_action():
-    label1.config(text=sushi[random.randrange(num)])
+
+def button_action1():
+    user_input = entry1.get()
+    entry1.delete(0, 100)
+    if label0.cget("text") == user_input:
+        label0.config(text=sushi[random.randrange(num)])
 
 
 # 入力フィールドの作成
@@ -35,7 +41,7 @@ entry1 = tk.Entry(window, bg=fg_color, fg=bg_color)
 entry1.pack(pady=10)
 
 # ボタンの作成
-button1 = tk.Button(window, text="Submit", command=button_action)
+button1 = tk.Button(window, text="Submit", command=button_action1)
 button1.pack(pady=10)
 
 # 出力ラベルの作成
