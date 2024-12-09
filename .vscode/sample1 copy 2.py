@@ -12,7 +12,7 @@ window.configure(bg=bg_color)
 
 def button_action():  # 関数の定義 ※ボタンが押されたときの動き # 入力値を取得
     num1=int(entry.get())
-  if num1<=1911:
+  if num1 <=1911:
     num2=int(num1)-1867
     label1.config(text="明治"+str(num2)+"年")
   elif num1<=1925:
